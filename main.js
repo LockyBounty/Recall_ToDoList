@@ -1,6 +1,9 @@
 
+let urlLink="";
+
 let bouton1 = document.querySelector("#login-button");
 let bouton2 =document.querySelector("#signup-button");
+
 
 
 
@@ -18,3 +21,6 @@ let toSign = () => {
 
 bouton1.addEventListener("click", toCheck);
 bouton2.addEventListener("click", toSign);
+
+
+// Register page //

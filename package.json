@@ -1,0 +1,23 @@
+{
+  "name": "jwt_practice",
+  "version": "1.0.0",
+  "description": "Login practice",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lockybounty/Recall_ToDoList.git"
+  },
+  "author": "Luke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lockybounty/Recall_ToDoList/issues"
+  },
+  "homepage": "https://github.com/lockybounty/Recall_ToDoList#readme",
+  "dependencies": {
+    "express":"*",
+    "body-parser": "*"
+  }
+}

@@ -14,20 +14,47 @@ let logger = function(req, res, next){
 
 app.use(logger); 
 */
+//View engine
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname,'views'));
 
 //body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 //set static path// vers le dossier 'public'
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/api', (req, res) => {
+// app.get('/api', (req, res) => {
+    
+//     res.json({
+//         message: 'Welcome to the API... Bitch!'
+//     });
+// });
 
-    res.json({
-        message: 'Welcome to the API... Bitch!'
+var users = [
+    {
+        id:1,
+        first_name: 'John',
+        last_name:'Doe',
+        email: 'johndoe@gmail.com'
+        
+    },
+    {
+        id:2,
+        first_name: 'Bob',
+        last_name:'Smith',
+        email: 'johndoe@gmail.com'
+    }
+];
+
+app.get('/', function(req, res){
+    res.render('index',{
+        title: 'Customers',
+        users: users
     });
 });
+
 
 app.post('/api/posts', verifyToken, (req, res) => {
     jwt.verify(req.token, 'secretkey', (err, authData) => {

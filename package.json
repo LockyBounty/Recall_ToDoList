@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/lockybounty/Recall_ToDoList#readme",
   "dependencies": {
-    "express":"*",
-    "body-parser": "*"
+    "body-parser": "*",
+    "ejs": "^2.6.1",
+    "express": "*"
   }
 }

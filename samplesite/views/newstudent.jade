@@ -1,0 +1,32 @@
+extends layout
+
+block content
+    h3= title
+    form#form_add_student(name="addstudent", method="post",
+    action='/addstudent')
+        span Name
+        span &nbsp;
+        input#input_name(type="text", placeholder="student", name="student"
+        )
+        br
+        br
+        span Name
+        span &nbsp;
+        input#input_name(type="text", placeholder="student", name="student"
+        )
+        br
+        br
+        span Street
+        span &nbsp;
+        input#input_street(type="text", placeholder="street", name="street"
+        )
+        br
+        br
+        span City
+        span &nbsp;
+        input#input_city(type="text", placeholder="city", name="city"
+        )
+        br
+        br
+        button#submit_student(type='submit') submit
+       

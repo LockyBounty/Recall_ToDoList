@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const path = require('path');
 const expressValidator = require('express-validator');
+const mongojs = require('mongojs');
+const db = mongojs('customerapp', ['users']);
 
 const app = express();
 
@@ -60,25 +62,15 @@ app.use(expressValidator({
 //     });
 // });
 
-var users = [{
-        id: 1,
-        first_name: 'John',
-        last_name: 'Doe',
-        email: 'johndoe@gmail.com'
 
-    },
-    {
-        id: 2,
-        first_name: 'Bob',
-        last_name: 'Smith',
-        email: 'johndoe@gmail.com'
-    }
-];
 
 app.get('/', function (req, res) {
-    res.render('index', {
-        title: 'Customers',
-        users: users
+    db.users.find(function (err, docs){
+        res.render('index', {
+            title: 'Customers',
+            users: users
+    })
+    
     });
 });
 

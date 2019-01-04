@@ -2,7 +2,7 @@
 <h1>Add Customer</h1>
 <% if(errors != undefined){%>
     <ul>
-      <% users.forEach(function(error){ %>
+      <% errors.forEach(function(error){ %>
       <li><%= error.msg %></li>
      <% }) %>
     </ul>
